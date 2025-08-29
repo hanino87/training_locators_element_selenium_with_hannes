@@ -129,6 +129,16 @@ driver.find_element(By.CSS_SELECTOR, '[data-test="username-field"]')
 ```python
 driver.find_element(By.XPATH, '//input[@placeholder="Username"]')
 ```
+using this generic you have sometims to switch tag and attribute if its label and //tag[@attribute="value"] 
+
+```python
+
+//label[@for="username"]
+
+```
+
+
+
 
 - Benefits:
   - Ignores the depth in the DOM.
