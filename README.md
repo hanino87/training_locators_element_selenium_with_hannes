@@ -207,3 +207,73 @@ username_input = driver.find_element(By.CLASS_NAME, "username")
 
 This setup ensures your Selenium tests are **stable, readable, and maintainable**, even if the webpage layout changes.
 
+## Code Example Below of some locators with element for a login test with module BY from selenium 
+
+```py
+
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+import time
+from selenium.webdriver.common.by import By
+
+APP_URL='http://localhost:5173'
+
+options = Options()
+options.add_experimental_option("excludeSwitches", ["enable-logging"])
+
+def test_add_product_as_admin():
+    
+    #Arrange testsetup 
+    driver = webdriver.Chrome(options=options)
+    driver.get(APP_URL)
+    
+    username_field=driver.find_element(By.XPATH,'//input[@placeholder="Username"]')
+    
+    password_field=driver.find_element(By.XPATH,'//input[@placeholder="Password"]')
+    
+    login_btn=driver.find_element(By.ID, "signup")
+    
+    login_btn.click()
+  
+    # Teardown - end of test 
+    driver.quit()
+
+
+
+```
+
+## Code Example Below of some locators with element for a login test without module BY from selenium 
+
+```py
+
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+import time
+
+APP_URL='http://localhost:5173'
+
+options = Options()
+options.add_experimental_option("excludeSwitches", ["enable-logging"])
+
+def test_add_product_as_admin():
+    
+    #Arrange testsetup
+
+    driver = webdriver.Chrome(options=options)
+    driver.get(APP_URL)
+    
+    username_field=driver.find_element("xpath",'//input[@placeholder="Username"]')
+    
+    password_field=driver.find_element("xpath",'//input[@placeholder="Password"]')
+    
+    login_btn=driver.find_element("id", "signup")
+    
+    login_btn.click()
+  
+    # Teardown - end of test 
+    driver.quit()
+
+
+```
+
+
