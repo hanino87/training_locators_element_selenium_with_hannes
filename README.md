@@ -191,10 +191,15 @@ username_input = driver.find_element(By.CLASS_NAME, "username")
 ## 📌 Locator Priority & Best Practices
 
 1.ID → Most stable
+
 2.data-test / data-testid → For automation-friendly attributes
+
 3.name
+
 4.placeholder / type / class (only if stable & unique) / other attributes
+
 5.Anchored XPath (parent/container + attributes)
+
 6nth-of-type or index → Last resort
 
 **Tips:**
