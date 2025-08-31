@@ -231,9 +231,9 @@ def test_add_product_as_admin():
     
     password_field=driver.find_element(By.XPATH,'//input[@placeholder="Password"]')
     
-    login_btn=driver.find_element(By.ID, "signup")
+    signup_btn=driver.find_element(By.ID, "signup")
     
-    login_btn.click()
+    signup_btn.click()
   
     # Teardown - end of test 
     driver.quit()
@@ -266,9 +266,9 @@ def test_add_product_as_admin():
     
     password_field=driver.find_element("xpath",'//input[@placeholder="Password"]')
     
-    login_btn=driver.find_element("id", "signup")
+    signup_btn=driver.find_element("id", "signup")
     
-    login_btn.click()
+    signup_btn.click()
   
     # Teardown - end of test 
     driver.quit()
