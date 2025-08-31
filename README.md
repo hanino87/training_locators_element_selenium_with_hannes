@@ -257,7 +257,7 @@ def test_register_a_user():
 
 ```
 
-## Code Example Below of some locators with element for a login test without module BY from selenium 
+## Code Example Below of some locators with element for a login test without module BY from selenium use for older Selenium version. 
 
 ```py
 
