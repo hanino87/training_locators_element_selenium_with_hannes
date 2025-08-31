@@ -230,19 +230,20 @@ def test_register_a_user():
     password="123456"
     
     username="Hannes"
-    
 
+    #Assign a variable to signup button 
     signup_btn=driver.find_element(By.ID, "signup")
-    
+
+    # Perform click on signup button 
     signup_btn.click()
-    
+
+    # Assign usernname and password fields to variables 
     username_field=driver.find_element(By.XPATH,'//input[@placeholder="Username"]')
-    
     password_field=driver.find_element(By.XPATH,'//input[@placeholder="Password"]')
     
-    signup_btn=driver.find_element(By.ID, "signup")
-    
-    signup_btn.click()
+     # Fill in texts in password and username field
+    password_field.send_keys(password)
+    username_field.send_keys(username)
   
     # Teardown - end of test 
     driver.quit()
@@ -264,7 +265,7 @@ APP_URL='http://localhost:5173'
 options = Options()
 options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
-def test_add_product_as_admin():
+def test_register_a_user():
     
     #Arrange testsetup
 
@@ -272,21 +273,24 @@ def test_add_product_as_admin():
     
     username="Hannes"
     
-
     driver = webdriver.Chrome(options=options)
+
+    # Use driver to go to webpage 
     driver.get(APP_URL)
 
+    # Assign signup button to a variable 
     signup_btn=driver.find_element("id", "signup")
-    
+
+    # Perform click on signup button 
     signup_btn.click()
-    
+
+    # Assign usernname and password fields to variables 
     username_field=driver.find_element("xpath",'//input[@placeholder="Username"]')
-    
     password_field=driver.find_element("xpath",'//input[@placeholder="Password"]')
-    
-    signup_btn=driver.find_element("id", "signup")
-    
-    signup_btn.click()
+
+    # Fill in texts in password and username field
+    password_field.send_keys(password)
+    username_field.send_keys(username)
   
     # Teardown - end of test 
     driver.quit()
