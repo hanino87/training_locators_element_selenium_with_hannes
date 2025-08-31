@@ -179,7 +179,7 @@ driver.find_element(By.XPATH, '//form[@id="login-form"]//input[@placeholder="Use
 
 ---
 
-### 4 Class as an option for selector s
+### 4 Class as an option for selectors
 
 <input class="username">
 
@@ -190,12 +190,12 @@ username_input = driver.find_element(By.CLASS_NAME, "username")
 
 ## 📌 Locator Priority & Best Practices
 
-1. **ID** → Most stable  
-2. **data-test / data-testid** → For automation-friendly attributes  
-3. **name** → If ID or data-test is missing  
-4. **placeholder / type / other attributes**  
-5. **Anchored XPath (parent/container + attributes)**  
-6. **nth-of-type or index** → Last resort
+1.ID → Most stable
+2.data-test / data-testid → For automation-friendly attributes
+3.name
+4.placeholder / type / class (only if stable & unique) / other attributes
+5.Anchored XPath (parent/container + attributes)
+6nth-of-type or index → Last resort
 
 **Tips:**
 
@@ -221,11 +221,20 @@ APP_URL='http://localhost:5173'
 options = Options()
 options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
-def test_add_product_as_admin():
+def test_register_a_user():
     
     #Arrange testsetup 
     driver = webdriver.Chrome(options=options)
     driver.get(APP_URL)
+
+    password="123456"
+    
+    username="Hannes"
+    
+
+    signup_btn=driver.find_element(By.ID, "signup")
+    
+    signup_btn.click()
     
     username_field=driver.find_element(By.XPATH,'//input[@placeholder="Username"]')
     
@@ -259,8 +268,17 @@ def test_add_product_as_admin():
     
     #Arrange testsetup
 
+    password="123456"
+    
+    username="Hannes"
+    
+
     driver = webdriver.Chrome(options=options)
     driver.get(APP_URL)
+
+    signup_btn=driver.find_element("id", "signup")
+    
+    signup_btn.click()
     
     username_field=driver.find_element("xpath",'//input[@placeholder="Username"]')
     
