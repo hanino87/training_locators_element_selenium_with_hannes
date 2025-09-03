@@ -69,6 +69,7 @@ Name – e.g., <input name="password"> → [name="password"]
 Class – e.g., <button class="btn-primary">
 CSS selectors – flexible, e.g., div > input[type='text']
 XPath – more powerful, e.g., //button[text()='Log in']
+Testautomation Tools own built in Locators 
 
 
 ### 1. Prefer IDs (if available)
@@ -187,20 +188,37 @@ driver.find_element(By.XPATH, '//form[@id="login-form"]//input[@placeholder="Use
 username_input = driver.find_element(By.CLASS_NAME, "username")
 ```
 
+### 5. Testautomation Tools own built in locators 
+
+Some Testautomation tool have their own built-in locators to use. This is the best practice to use those selectors. 
+
+Selenium has its own built-in locators from the module BY that you import from Selenium
+
+Built-in locators:
+By.id()
+By.name()
+By.className()
+By.tagName()
+By.linkText()
+By.partialLinkText()
+By.cssSelector()
+By.xpath()
 
 ## 📌 Locator Priority & Best Practices
 
-1.ID → Most stable
+1. Testautomation Tools own built-in locators By from Selenium 
 
-2.data-test / data-testid → For automation-friendly attributes
+2.ID → Most stable
 
-3.name
+3.data-test / data-testid → For automation-friendly attributes
 
-4.placeholder / type / class (only if stable & unique) / other attributes
+4.name
 
-5.Anchored XPath (parent/container + attributes)
+5.placeholder / type / class (only if stable & unique) / other attributes
 
-6nth-of-type or index → Last resort
+6.Anchored XPath (parent/container + attributes)
+
+7nth-of-type or index → Last resort
 
 **Tips:**
 
@@ -212,7 +230,7 @@ username_input = driver.find_element(By.CLASS_NAME, "username")
 
 This setup ensures your Selenium tests are **stable, readable, and maintainable**, even if the webpage layout changes.
 
-## Code Example Below of some locators with element for a login test with module BY from selenium 
+## Code Example Below of some locators with element for a login test with module By from seleniums. It´s Seleniums own built-in locators. 
 
 ```py
 
@@ -257,7 +275,7 @@ def test_register_a_user():
 
 ```
 
-## Code Example Below of some locators with element for a login test without module BY from selenium use for older Selenium version. 
+## Code Example Below of some locators with element for a login test without module BY from Selenium use for older Selenium version and it`s not a built-in locators you can use in Selenium. 
 
 ```py
 
