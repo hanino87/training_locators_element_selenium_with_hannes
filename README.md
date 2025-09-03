@@ -195,13 +195,21 @@ Some Testautomation tool have their own built-in locators to use. This is the be
 Selenium has its own built-in locators from the module BY that you import from Selenium
 
 Built-in locators:
+
 By.id()
+
 By.name()
+
 By.className()
+
 By.tagName()
+
 By.linkText()
+
 By.partialLinkText()
+
 By.cssSelector()
+
 By.xpath()
 
 ## 📌 Locator Priority & Best Practices
